@@ -1,0 +1,71 @@
+body {
+    background-color: white;
+}
+
+nav {
+    width: 0px;
+    background-color: white;
+}
+
+.slider {
+    /* background-color: white; */
+    background-image: linear-gradient(180deg, rgb(4, 4, 159), rgb(218, 79, 218));
+    border-radius: 0px 10px 10px 0px;
+    width: 60px;
+}
+
+.navItems li {
+    padding-left: 30px;
+    position: absolute;
+    top: 70%;
+    left: 0px;
+    cursor: pointer;
+    display: none;
+    transition: 100ms;
+}
+
+.navItems li:hover {
+    color: rgb(218, 79, 218);
+}
+
+.down {
+    width: 255px;
+}
+
+.down * {
+    display: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+.dish,.category {
+    height: fit-content;
+}
+
+.name {
+    color: rgb(218, 79, 218);
+}
+
+.dishShadow,.categoryShadow {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-image: linear-gradient(180deg, rgba(4, 4, 159, 0.203), rgba(218, 79, 218, 0.208));
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+.mainNav{
+    z-index: 9999;
+}
+.recipie,.tags{
+    background-image:linear-gradient(180deg, rgba(4, 4, 159, 0.297), rgba(218, 79, 218, 0.33)); 
+    color: white;
+}
+.search{
+    display: none;
+}
+.area{
+    background-color: rgba(4, 4, 159, 0.589);
+    cursor: pointer;
+}
