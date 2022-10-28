@@ -53,6 +53,7 @@ async function mainPage() {
 mainPage();
 
 
+// search part ----------------------------------------------------------------------------------------//
 // search by letter function 
 byLetter.prop('maxlength', 1);
 
@@ -101,6 +102,7 @@ function display(meals) {
 
 
 
+// functions of hover on products --------------------------------------------------------------------------//
 $(document).on('mouseover', '.dish', function (e) {
     let shadow = e.target;
     shadow = $(shadow).parent().children().eq(0);
@@ -112,9 +114,19 @@ $(document).on('mouseleave', '.dish', function (e) {
 
     $(shadow).animate({ top: '100%' }, 500);
 });
+$(document).on('mouseover', '.category', function (e) {
+    let shadow = e.target;
+    shadow = $(shadow).parent().children().eq(0);
+    $(shadow).animate({ top: '0px' }, 800);
+});
+$(document).on('mouseleave', '.category', function (e) {
+    let shadow = e.target;
+    shadow = $(shadow).parent().children().eq(0);
+    $(shadow).animate({ top: '100%' }, 500);
+});
 
 
-
+// functions of display info of food ---------------------------------------------------------------------//
 $(document).on('click', '.dish', async function (e) {
     let shadow = e.target;
     shadow = $(shadow).parent().children().eq(0).children();
@@ -217,18 +229,6 @@ $(document).on('click', '.dish', async function (e) {
 
 })
 
-
-$(document).on('mouseover', '.category', function (e) {
-    let shadow = e.target;
-    shadow = $(shadow).parent().children().eq(0);
-    $(shadow).animate({ top: '0px' }, 800);
-});
-$(document).on('mouseleave', '.category', function (e) {
-    let shadow = e.target;
-    shadow = $(shadow).parent().children().eq(0);
-    $(shadow).animate({ top: '100%' }, 500);
-});
-
 $(document).on('click', '.category', async function (e) {
     let shadow = e.target;
     shadow = $(shadow).parent().children().eq(0).children();
@@ -293,8 +293,7 @@ function closeNav() {
 }
 
 
-// nav bar actions 
-
+// nav bar actions ----------------------------------------------------------------------------------//
 
 //search
 $('#search').click(function () {
@@ -303,10 +302,9 @@ $('#search').click(function () {
     showContainer.empty();
     closeNav();
 
-})
+});
 
 // category
-
 $('#category').click(async function () {
     let fetchPromise = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
     let fetchBody = await fetchPromise.json();
@@ -333,11 +331,9 @@ function categoryDisplay(meals) {
         }
 
     }
-}
-
+};
 
 //Area
-
 $('#area').click(async function () {
     let fetchPromise = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`);
     let fetchBody = await fetchPromise.json();
@@ -345,8 +341,7 @@ $('#area').click(async function () {
     extras();
     AreaDisplay(meals);
 
-})
-
+});
 function AreaDisplay(meals) {
     if (meals != null) {
         for (let i of meals) {
@@ -365,8 +360,9 @@ function AreaDisplay(meals) {
 
     }
 
-}
+};
 
+//ingridents
 $('#ing').click(async function () {
     let fetchPromise = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`);
     let fetchBody = await fetchPromise.json();
@@ -375,7 +371,7 @@ $('#ing').click(async function () {
     IngDisplay(meals);
 
 
-})
+});
 function IngDisplay(meals) {
     if (meals != null) {
         for (let i of meals) {
@@ -404,8 +400,9 @@ function IngDisplay(meals) {
 
     }
 
-}
+};
 
+//contact us
 $('#contact').click(function () {
     extras();
     showContainer.html(`<div class="container pt-5 text-center px-5">
@@ -500,7 +497,7 @@ $(document).on('keyup , blur', '#userName', function () {
 
 $(document).on('keyup , blur', '#userEmail', function () {
     let val = $('#userEmail').val();
-    let regex = new RegExp('^[a-zA-Z0-9]{1,}(@){1}[a-zA-Z]{1,}(\.){1}[a-zA-Z]{2,}');
+    let regex = new RegExp('^[a-zA-Z0-9_-]{1,}(@){1}[a-zA-Z]{1,}(\.){1}[a-zA-Z]{2,}');
     flag[1] = testInput(regex, val, 'Enter valid email. *Ex: xxx@yyy.zzz', 'userEmail');
     let btn = $('#userName').parent().parent().children().last()
 
