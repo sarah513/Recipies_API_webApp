@@ -407,7 +407,7 @@ $('#contact').click(function () {
     extras();
     showContainer.html(`<div class="container pt-5 text-center px-5">
     <h1>Contact Us</h1>
-    <div class="d-flex flex-wrap p-5 form justify-content-center ">
+    <div class="d-flex flex-wrap p-md-5 form justify-content-center ">
 
         <div class="col-md-6 col-sm-12 col-xs-12 p-2">
             <input type="text" name="name" id="userName" placeholder="Your user name "
