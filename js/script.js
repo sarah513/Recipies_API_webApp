@@ -236,7 +236,7 @@ $(document).on('click', '.category', async function (e) {
     if (shadow == undefined) {
         shadow = $(e.target).text();
     }
-    let fetchPromise = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${shadow}`);
+    let fetchPromise = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${shadow}`);
     let fetchBody = await fetchPromise.json();
     let result = fetchBody.meals;
     showContainer.empty();
