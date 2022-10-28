@@ -62,10 +62,37 @@ i {
     background-image:linear-gradient(180deg, rgba(4, 4, 159, 0.297), rgba(218, 79, 218, 0.33)); 
     color: white;
 }
-.search{
-    display: none;
-}
-.area{
-    background-color: rgba(4, 4, 159, 0.589);
+
+.area , .ing{
+    border: 1px  rgba(4, 4, 159, 0.589) solid;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 300ms;
+}
+
+.area:hover , .ing:hover{
+    background-image: linear-gradient(180deg, rgba(4, 4, 159, 0.203), rgba(218, 79, 218, 0.208));
+}
+.ingName{
+    color: rgba(4, 4, 159, 0.589) ;
+}
+.main-section{
+    position: absolute;
+    left: 60px;
+    top: 0px;
+    width: calc(100% - 60px);
+}
+.form{
+    border:1px  rgba(4, 4, 159, 0.589) solid;
+    background-image:
+    linear-gradient(180deg, rgba(4, 4, 159, 0.203), rgba(218, 79, 218, 0.208));
+    border-radius: 10px;
+}
+
+@media screen and (max-width:577px) {
+    .col-xs-12{
+        flex: 0 0 auto;
+    width: 100%;
+    }
+    
 }
