@@ -88,6 +88,10 @@ i {
     linear-gradient(180deg, rgba(4, 4, 159, 0.203), rgba(218, 79, 218, 0.208));
     border-radius: 10px;
 }
+#byName,#byLetter{
+    border: 1px rgba(4, 4, 159, 0.589)  solid !important;
+    border-radius: 10px !important;
+}
 
 @media screen and (max-width:577px) {
     .col-xs-12{
